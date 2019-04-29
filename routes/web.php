@@ -15,6 +15,7 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
+//log-viewer
 $router->group(['namespace' => '\Rap2hpoutre\LaravelLogViewer'], function() use ($router) {
     $router->get('logs', 'LogViewerController@index');
 });
