@@ -21,9 +21,9 @@ $app = new Laravel\Lumen\Application(
     dirname(__DIR__)
 );
 
-// $app->withFacades();
+$app->withFacades();
 
-// $app->withEloquent();
+$app->withEloquent();
 
 /*
 |--------------------------------------------------------------------------
@@ -90,6 +90,9 @@ $app->singleton(
 | can respond to, as well as the controllers that may handle them.
 |
 */
+
+//log-viewer
+$app->register(\Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class);
 
 $app->router->group([
     'namespace' => 'App\Http\Controllers',
