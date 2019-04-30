@@ -24,5 +24,11 @@ $api->version('v1', [
             'as' => 'resources',
             'uses' => 'ResourceController@getResources'
         ]);
+
+        //curl工具包(Zttp)使用示范接口
+        $api->get('curl/{id}', [
+            'as' => 'curl',
+            'uses' => 'ResourceController@testCurl'
+        ]);
     });
 });
