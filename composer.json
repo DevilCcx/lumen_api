@@ -10,6 +10,7 @@
         "kitetail/zttp": "^0.4.0",
         "laravel/lumen-framework": "5.8.*",
         "rap2hpoutre/laravel-log-viewer": "^1.1",
+        "vladimir-yuldashev/laravel-queue-rabbitmq": "^8.0",
         "vlucas/phpdotenv": "^3.3"
     },
     "require-dev": {

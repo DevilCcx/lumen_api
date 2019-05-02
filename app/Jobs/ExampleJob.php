@@ -2,6 +2,8 @@
 
 namespace App\Jobs;
 
+use Illuminate\Support\Facades\Log;
+
 class ExampleJob extends Job
 {
     /**
@@ -21,6 +23,7 @@ class ExampleJob extends Job
      */
     public function handle()
     {
-        //
+        sleep(2);
+        Log::notice('rabbit队列执行');
     }
 }

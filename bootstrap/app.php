@@ -97,6 +97,9 @@ $app->register(\Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::cl
 //dingo
 $app->register(Dingo\Api\Provider\LumenServiceProvider::class);
 
+//rabbitMQ
+$app->register(VladimirYuldashev\LaravelQueueRabbitMQ\LaravelQueueRabbitMQServiceProvider::class);
+
 $app->router->group([
     'namespace' => 'App\Http\Controllers',
 ], function ($router) {

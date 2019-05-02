@@ -3,9 +3,11 @@
 namespace App\Api\V1\Controllers\Module;
 
 use App\Api\GlobalRequest\ApiRequest;
+use App\Jobs\ExampleJob;
 use Dingo\Api\Http\Request;
 use Dingo\Api\Routing\Helpers;
 use App\Api\ApiBaseController;
+use Illuminate\Support\Facades\Log;
 use Zttp\Zttp;
 
 class ResourceController extends ApiBaseController
@@ -74,5 +76,17 @@ class ResourceController extends ApiBaseController
         //everything
         $response->json();
 
+    }
+
+    /**
+     * rabbitMQ调用示范
+     *
+     * @return \Dingo\Api\Http\Response
+     */
+    public function testRabbitMQ()
+    {
+        Log::notice('启动队列');
+        $this->dispatch(new ExampleJob());
+        return $this->response->noContent();
     }
 }

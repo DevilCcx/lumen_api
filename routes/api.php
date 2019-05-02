@@ -30,5 +30,11 @@ $api->version('v1', [
             'as' => 'curl',
             'uses' => 'ResourceController@testCurl'
         ]);
+
+        //rabbitMQ使用示范接口
+        $api->get('rabbitMQ', [
+            'as' => 'rabbitMQ',
+            'uses' => 'ResourceController@testRabbitMQ'
+        ]);
     });
 });
