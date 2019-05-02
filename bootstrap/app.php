@@ -100,6 +100,9 @@ $app->register(Dingo\Api\Provider\LumenServiceProvider::class);
 //rabbitMQ
 $app->register(VladimirYuldashev\LaravelQueueRabbitMQ\LaravelQueueRabbitMQServiceProvider::class);
 
+//redis
+$app->register(Illuminate\Redis\RedisServiceProvider::class);
+
 $app->router->group([
     'namespace' => 'App\Http\Controllers',
 ], function ($router) {

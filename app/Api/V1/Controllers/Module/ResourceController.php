@@ -8,6 +8,8 @@ use Dingo\Api\Http\Request;
 use Dingo\Api\Routing\Helpers;
 use App\Api\ApiBaseController;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Redis;
 use Zttp\Zttp;
 
 class ResourceController extends ApiBaseController
@@ -88,5 +90,19 @@ class ResourceController extends ApiBaseController
         Log::notice('启动队列');
         $this->dispatch(new ExampleJob());
         return $this->response->noContent();
+    }
+
+    /**
+     * 缓存使用示范测试
+     *
+     * @return \Dingo\Api\Http\Response
+     */
+    public function testCache()
+    {
+        Cache::put('xmall:orders:ticket', 456, 5);
+        Redis::setex('site_name', 10, 'Lumen的redis');
+        Redis::connection()->lpush('xisland', [123, 5]);
+        Redis::connection('cache')->lpush('xisland', [123, 5]);
+        return $this->response->array([]);
     }
 }

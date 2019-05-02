@@ -36,5 +36,10 @@ $api->version('v1', [
             'as' => 'rabbitMQ',
             'uses' => 'ResourceController@testRabbitMQ'
         ]);
+
+        //缓存使用示范
+        $api->get('cache', [
+            'uses' => 'ResourceController@testCache'
+        ]);
     });
 });
