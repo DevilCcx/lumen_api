@@ -2,12 +2,13 @@
 
 namespace App\Api\V1\Controllers\Module;
 
+use App\Api\GlobalRequest\ApiRequest;
 use Dingo\Api\Http\Request;
 use Dingo\Api\Routing\Helpers;
-use Laravel\Lumen\Routing\Controller as BaseController;
+use App\Api\ApiBaseController;
 use Zttp\Zttp;
 
-class ResourceController extends BaseController
+class ResourceController extends ApiBaseController
 {
     //dingo api 的一些工具
     use Helpers;
@@ -21,6 +22,9 @@ class ResourceController extends BaseController
      */
     public function getResources(Request $request, $id)
     {
+        $this->globalRequest($request);
+        ApiRequest::setParams(['tt'=>123]);
+        ApiRequest::getParams();
         return $this->response->array([$id]);
     }
 
@@ -30,6 +34,8 @@ class ResourceController extends BaseController
      */
     public function testCurl()
     {
+        $res = \Illuminate\Support\Facades\Cache::store('array')->get('test');
+        dd($res);
         $url = 'https://xmall.pc.xisland.cn/index.php/admin/hotel.Hotel/getHotelList';
 
         //post 自定义头部内容
