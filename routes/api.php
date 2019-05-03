@@ -42,4 +42,17 @@ $api->version('v1', [
             'uses' => 'ResourceController@testCache'
         ]);
     });
+
+    /**
+     * 订单模块
+     */
+    $api->group([
+        'prefix' => 'orders',
+        'namespace' => 'Order'
+    ], function ($api) {
+        //获取订单
+        $api->get('/', [
+            'uses' => 'OrderController@getOrders'
+        ]);
+    });
 });

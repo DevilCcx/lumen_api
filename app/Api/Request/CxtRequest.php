@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Api\GlobalRequest;
+namespace App\Api\Request;
 
 /**
  * api请求封装
@@ -8,7 +8,7 @@ namespace App\Api\GlobalRequest;
  * Class ApiRequest
  * @package App\Api
  */
-class Request
+class CxtRequest
 {
     //请求ID
     private $requestId;

@@ -1,6 +1,7 @@
 <?php
 
-namespace App\Api\GlobalRequest;
+namespace App\Api\Request;
+
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Log;
 use Psr\SimpleCache\InvalidArgumentException;
@@ -12,7 +13,7 @@ use Dingo\Api\Http\Request as DingoRequest;
  * Class ApiRequest
  * @package App\Api
  */
-class ApiRequest
+class GlobalReq
 {
     const global_request_key = 'global_request';
 
@@ -23,7 +24,7 @@ class ApiRequest
      */
     static public function init(DingoRequest $dingoRequest)
     {
-        $apiRequest = new Request();
+        $apiRequest = new CxtRequest();
         $apiRequest->setRequestId('request_id');
         $apiRequest->setClientIp($dingoRequest->getClientIp());
         $apiRequest->setDomain($dingoRequest->getHost());

@@ -103,6 +103,9 @@ $app->register(VladimirYuldashev\LaravelQueueRabbitMQ\LaravelQueueRabbitMQServic
 //redis
 $app->register(Illuminate\Redis\RedisServiceProvider::class);
 
+//swoole
+$app->register(SwooleTW\Http\LumenServiceProvider::class);
+
 $app->router->group([
     'namespace' => 'App\Http\Controllers',
 ], function ($router) {

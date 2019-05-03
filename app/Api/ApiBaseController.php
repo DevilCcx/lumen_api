@@ -2,13 +2,14 @@
 
 namespace App\Api;
 
-use App\Api\GlobalRequest\ApiRequest;
-use Illuminate\Support\Facades\Cache;
+use App\Api\Request\GlobalReq;
 use Laravel\Lumen\Routing\Controller as BaseController;
 use Dingo\Api\Http\Request;
 
 class ApiBaseController extends BaseController
 {
+
+
     /**
      * 使用全局请求变量
      *
@@ -16,6 +17,6 @@ class ApiBaseController extends BaseController
      */
     protected function globalRequest(Request $request)
     {
-        ApiRequest::init($request);
+        GlobalReq::init($request);
     }
 }

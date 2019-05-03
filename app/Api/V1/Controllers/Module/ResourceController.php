@@ -2,7 +2,7 @@
 
 namespace App\Api\V1\Controllers\Module;
 
-use App\Api\GlobalRequest\ApiRequest;
+use App\Api\Request\GlobalReq;
 use App\Jobs\ExampleJob;
 use Dingo\Api\Http\Request;
 use Dingo\Api\Routing\Helpers;
@@ -27,8 +27,8 @@ class ResourceController extends ApiBaseController
     public function getResources(Request $request, $id)
     {
         $this->globalRequest($request);
-        ApiRequest::setParams(['tt'=>123]);
-        ApiRequest::getParams();
+        GlobalReq::setParams(['id'=>$id]);
+        GlobalReq::getParams();
         return $this->response->array([$id]);
     }
 
