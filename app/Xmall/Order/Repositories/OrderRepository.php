@@ -1,8 +1,8 @@
 <?php
 
-namespace Xmall\Repositories;
+namespace Xmall\Order\Repositories;
 
-use Xmall\Order;
+use Xmall\Order\Order;
 
 class OrderRepository
 {
@@ -38,6 +38,6 @@ class OrderRepository
                 'landTicketOrder.land:id,name',
             ])
             ->select('id')
-            ->paginate(100);
+            ->paginate(10);
     }
 }

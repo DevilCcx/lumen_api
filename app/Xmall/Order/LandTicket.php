@@ -1,6 +1,6 @@
 <?php
 
-namespace Xmall;
+namespace Xmall\Order;
 
 use Illuminate\Database\Eloquent\Model;
 

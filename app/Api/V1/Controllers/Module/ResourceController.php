@@ -29,6 +29,8 @@ class ResourceController extends ApiBaseController
         $this->globalRequest($request);
         GlobalReq::setParams(['id'=>$id]);
         GlobalReq::getParams();
+
+
         return $this->response->array([$id]);
     }
 
@@ -99,7 +101,7 @@ class ResourceController extends ApiBaseController
      */
     public function testCache()
     {
-        Cache::put('xmall:orders:ticket', 456, 5);
+        Cache::put('xmall:orders:order_id', 456, 5);
         Redis::setex('site_name', 10, 'Lumen的redis');
         Redis::connection()->lpush('xisland', [123, 5]);
         Redis::connection('cache')->lpush('xisland', [123, 5]);

@@ -1,6 +1,6 @@
 <?php
 
-namespace Xmall;
+namespace Xmall\Order;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -17,7 +17,7 @@ class Order extends Model
      */
     public function goodsOrder()
     {
-        return $this->hasOne('Xmall\GoodsOrder', 'order_id', 'id');
+        return $this->hasOne('Xmall\Order\GoodsOrder', 'order_id', 'id');
     }
 
     /**
@@ -27,7 +27,7 @@ class Order extends Model
      */
     public function landTicketOrder()
     {
-        return $this->hasOne('Xmall\LandTicketOrder', 'order_id', 'id');
+        return $this->hasOne('Xmall\Order\LandTicketOrder', 'order_id', 'id');
     }
 
     /**
@@ -37,7 +37,7 @@ class Order extends Model
      */
     public function visitOrder()
     {
-        return $this->hasOne('Xmall\VisitOrder', 'order_id', 'id');
+        return $this->hasOne('Xmall\Order\VisitOrder', 'order_id', 'id');
     }
 
     /**
@@ -47,7 +47,7 @@ class Order extends Model
      */
     public function hotelOrder()
     {
-        return $this->hasOne('Xmall\HotelOrder', 'order_id', 'id');
+        return $this->hasOne('Xmall\Order\HotelOrder', 'order_id', 'id');
     }
 
     /**
@@ -57,7 +57,7 @@ class Order extends Model
      */
     public function theatreOrder()
     {
-        return $this->hasOne('Xmall\TheatreOrder', 'order_id', 'id');
+        return $this->hasOne('Xmall\Order\TheatreOrder', 'order_id', 'id');
     }
 
     /**

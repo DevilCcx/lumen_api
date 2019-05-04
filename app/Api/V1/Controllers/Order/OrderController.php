@@ -4,7 +4,7 @@ namespace App\Api\V1\Controllers\Order;
 
 use App\Api\ApiBaseController;
 use Dingo\Api\Http\Request;
-use Xmall\Order\OrderQuery;
+use Xmall\Order\Services\OrderQuery;
 use Dingo\Api\Routing\Helpers;
 
 /**

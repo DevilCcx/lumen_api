@@ -1,6 +1,6 @@
 <?php
 
-namespace Xmall;
+namespace Xmall\Order;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -17,7 +17,7 @@ class LandTicketOrder extends Model
      */
     public function land()
     {
-        return $this->hasOne('Xmall\Land', 'id', 'lid');
+        return $this->hasOne('Xmall\Order\Land', 'id', 'lid');
     }
 
     /**
@@ -27,6 +27,6 @@ class LandTicketOrder extends Model
      */
     public function landTicket()
     {
-        return $this->hasOne('Xmall\LandTicket', 'id', 'tid');
+        return $this->hasOne('Xmall\Order\LandTicket', 'id', 'tid');
     }
 }

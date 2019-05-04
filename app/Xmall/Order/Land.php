@@ -1,6 +1,6 @@
 <?php
 
-namespace Xmall;
+namespace Xmall\Order;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -17,6 +17,6 @@ class Land extends Model
      */
     public function landImages()
     {
-        return $this->hasMany('Xmall\LandImages', 'land_id', 'id');
+        return $this->hasMany('Xmall\Order\LandImages', 'land_id', 'id');
     }
 }

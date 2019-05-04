@@ -1,10 +1,10 @@
 <?php
 
-namespace Xmall\Order;
+namespace Xmall\Order\Services;
 
 use App\Api\Request\GlobalReq;
-use Xmall\Order;
-use Xmall\Repositories\OrderRepository;
+use Xmall\Order\Order;
+use Xmall\Order\Repositories\OrderRepository;
 
 /**
  * 订单查询业务模块
